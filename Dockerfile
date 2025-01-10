@@ -21,8 +21,11 @@ RUN java -jar forge-installer.jar --installServer && \
 # Accept the Minecraft EULA
 RUN echo "eula=true" > eula.txt
 
+# Ensure run.sh exists and is executable
+RUN chmod +x run.sh
+
 # Expose the Minecraft server port
 EXPOSE 25565
 
-# Start the server dynamically using a shell for variable substitution
-CMD java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true $( [[  ! -f unix_args.txt ]] && printf %s "-jar {{SERVER_JARFILE}}" || printf %s "@unix_args.txt" )
+# Start the server with run.sh
+CMD ["sh", "run.sh"]
