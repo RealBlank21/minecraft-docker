@@ -25,4 +25,4 @@ RUN echo "eula=true" > eula.txt
 EXPOSE 25565
 
 # Start the server
-CMD ["java", "-Xmx2G", "-Xms2G", "-jar", "forge-installer.jar", "nogui"]
+CMD ["java", "-Xmx2G", "-Xms2G", "-jar", "forge-${MINECRAFT_VERSION}-${FORGE_VERSION}.jar", "nogui"]
