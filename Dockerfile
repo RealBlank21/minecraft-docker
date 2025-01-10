@@ -25,4 +25,4 @@ RUN echo "eula=true" > eula.txt
 EXPOSE 25565
 
 # Start the server dynamically using a shell for variable substitution
-CMD run.sh
+CMD ls
