@@ -25,4 +25,4 @@ RUN echo "eula=true" > eula.txt
 EXPOSE 25565
 
 # Start the server dynamically using a shell for variable substitution
-CMD java -Xmx2G -Xms2G -jar forge-${MINECRAFT_VERSION}-${FORGE_VERSION}.jar nogui
+CMD run
